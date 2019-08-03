@@ -10,3 +10,5 @@ Picture below shows my solution to the "Flash" led, aka "the Blinding Disk-Activ
 Quick de-solder of the collector on the top of the J3Y transistor just above the led, then put in some tape to keep it clear -- you can solder it back later if you want to use it.
 
 <img src="./de-solder.png">
+
+<img src="./de-solder2.png">
