@@ -5,5 +5,4 @@ Picture below shows my solution to the "Flash" led, aka "the Blinding Disk-Activ
 
 Quick desolder of the collector on the top of the J3Y transistor just above the led.
 
-![Alt text](./de-solder.png)
 <img src="./de-solder.png">
