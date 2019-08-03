@@ -1,0 +1,11 @@
+Some samples of the files produced by this program:
+
+File name shows the date and time of the video starts, then frame size(uxga,svga,vga,cif), 
+jpeg quality (0..63), length (seconds), and playback speed (x realtime).
+
+2019-08-02__13-15-16_uxga_Q10_L30_S1.avi
+2019-08-02__13-16-28_svga_Q10_L30_S1.avi
+2019-08-02__13-17-03_vga_Q10_L30_S1.avi
+2019-08-02__13-17-42_cif_Q10_L30_S1.avi
+2019-08-02__13-21-15_uxga_Q5_L120_S20.avi
+2019-08-02__15-29-10_uxga_Q5_L1800_S40.avi
