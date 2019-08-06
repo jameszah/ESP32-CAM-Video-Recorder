@@ -1,8 +1,7 @@
-Some samples of the files produced by this program:
+Some samples of the files produced by this program (before I added interval to filename).
 
 File name shows the date and time of the video starts, then frame size (uxga,svga,vga,cif), 
 jpeg quality (0..63), length (seconds), and playback speed (x realtime).  
-Interval between frames, not included in filename.
 
 2019-08-02__13-15-16_uxga_Q10_L30_S1.avi    500 ms  - 2  frames per second
 2019-08-02__13-16-28_svga_Q10_L30_S1.avi    200 ms  - 5  frames per second
