@@ -53,13 +53,13 @@ TimeLapseAvi
   
 http://192.168.1.222/start?framesize=VGA&length=1800&interval=250&quality=10&repeat=100&speed=1&gray=0  -- this is a sample to start a new recording
 
-framesize can be UXGA, SVGA, VGA, CIF (default VGA)
-length is length in seconds of the recording 0..3600 (default 1800)
-interval is the milli-seconds between frames (default 200)
-quality is a number 5..50 for the jpeg  - smaller number is higher quality with bigger and more detailed jpeg (default 10)
-repeat is a number of who many of the same recordings should be made (default 100)
-speed is a factor to speed up realtime for a timelapse recording - 1 is realtime (default 1)
-gray is 1 for a grayscale video (default 0 - color)
+- framesize can be UXGA, SVGA, VGA, CIF (default VGA)
+- length is length in seconds of the recording 0..3600 (default 1800)
+- interval is the milli-seconds between frames (default 200)
+- quality is a number 5..50 for the jpeg  - smaller number is higher quality with bigger and more detailed jpeg (default 10)
+- repeat is a number of who many of the same recordings should be made (default 100)
+- speed is a factor to speed up realtime for a timelapse recording - 1 is realtime (default 1)
+- gray is 1 for a grayscale video (default 0 - color)
 
 These factors have to be within the limit of the SD chip to receive the data.
 For example, using a LEXAR 300x 32GB microSDHC UHS-I, the following works for me:
@@ -80,7 +80,9 @@ Search for "zzz" to find places to modify the code for:
 3.  Your Timezone for use in filenames
 4.  Defaults for framesize, quality, ... and if the recording should start on reboot of the ESP32 without receiving a command
   
-Sample videos produced by the program in the /sample folder -- it is not GoPro quality, but then GoPro's don't cost $10.
+Sample videos produced by the program in the /sample-output folder -- it is not GoPro quality, but then GoPro's don't cost $10.
+
+While not necessay, following is how I dealt with the "Flash" led on the front of the ESP32-CAm chip.
 
 Picture below shows my solution to the "Flash" led, aka "the Blinding Disk-Active light".  The led turns on whenever you are are writing data to the SD chip, which is normally after you have taken the picture, so you don't need the flash on any more!  
 
