@@ -67,7 +67,7 @@ For example, using a LEXAR 300x 32GB microSDHC UHS-I, the following works for me
 - UXGA quality 10,  2 fps (or interval of 500ms)
 - SVGA quality 10,  5 fps (200ms)
 - VGA  quality 10, 10 fps (100ms)
-- CIG  quality 10, 20 fps (50ms)
+- CIF  quality 10, 20 fps (50ms)
 
 If you increase fps, you might have to reduce quality or framesize to keep it from dropping frames as it writes all the data to the SD chip.
 
