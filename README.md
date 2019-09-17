@@ -30,6 +30,10 @@ TimeLapseAvi
   - when queue of frames gets full, it slips every other frame to try to catch up
   - camera is re-configued when changing from UXGA <> VGA to allow for more buffers 
     with the smaller frames
+    
+    You just need the 3 files in the /v23 folder for July version, which takes a picture and stores it
+    or the 3 files in the /v39 folder for the current which adds the queueing system to get better
+    frame rates, and keep recording if there is a small delay on file system.
   ~~~
 
   Acknowlegements:
