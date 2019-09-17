@@ -14,6 +14,24 @@ TimeLapseAvi
     jameszah/ESP32-CAM-Video-Recorder is licensed under the
     GNU General Public License v3.0
 
+  ~~~
+  Update Sep 15, 2019 TimeLapseAvi39x.ino
+  - work-in-progress
+  - I'm publishing this as a few people have been asking or working on this
+  
+  - program now uses both cpu's with cpu 0 taking pictures and queue'ing them
+    and a separate task on cpu 1 moving the pictures from the queue and adding
+    them to the avi file on the sd card
+  - the loop() task on cpu 1 now just handles the ftp system and http server
+  - dropped fixed ip and switch to mDNS with name "desklens", which can be typed into
+    browser, and also used as wifi name on router
+  - small change to ftp to cooperate with WinSCP program
+  - fixed bug so Windows would calulcate the correct length (time length) of avi 
+  - when queue of frames gets full, it slips every other frame to try to catch up
+  - camera is re-configued when changing from UXGA <> VGA to allow for more buffers 
+    with the smaller frames
+  ~~~
+
   Acknowlegements:
 
   1.  https://robotzero.one/time-lapse-esp32-cameras/
