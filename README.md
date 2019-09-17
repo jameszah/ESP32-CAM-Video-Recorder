@@ -1,12 +1,11 @@
 # ESP32-CAM-Video-Recorder
-Video Recorder for ESP32-CAM with http server for config and ftp server to download video, 
-creating mjpeg avi file on sd card
+Video Recorder for ESP32-CAM with http server for config and ftp server to download video
 
 TimeLapseAvi
 
   ESP32-CAM Video Recorder
 
-  This program records an AVI video on the SD Card of an ESP32-CAM.
+  This program records an MJPEG AVI video on the SD Card of an ESP32-CAM.
   
   by James Zahary July 20, 2019
      jamzah.plc@gmail.com
