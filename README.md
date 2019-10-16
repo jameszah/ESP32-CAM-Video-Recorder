@@ -14,6 +14,11 @@ TimeLapseAvi
     jameszah/ESP32-CAM-Video-Recorder is licensed under the
     GNU General Public License v3.0
 
+~~~
+Update Oct 15, 2019
+Make sure you are using esp32 board library 1.03 or better
+1.02 has major wifi problems !!!
+~~~
   ~~~
   Update Sep 15, 2019 TimeLapseAvi39x.ino
   - work-in-progress
