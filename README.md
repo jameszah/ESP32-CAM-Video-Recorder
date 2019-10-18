@@ -16,8 +16,8 @@ TimeLapseAvi
 
 ~~~
 Update Oct 15, 2019
-Make sure you are using esp32 board library 1.03 or better
-1.02 has major wifi problems !!!
+- Make sure you are using esp32 board library 1.03 or better
+- 1.02 has major wifi problems !!!
 ~~~
   ~~~
   Update Sep 15, 2019 TimeLapseAvi39x.ino
