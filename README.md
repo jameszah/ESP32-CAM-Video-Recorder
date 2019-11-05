@@ -24,10 +24,9 @@ Update Oct 15, 2019
   - work-in-progress
   - I'm publishing this as a few people have been asking or working on this
   
-  - program now uses both cpu's with cpu 0 taking pictures and queue'ing them
-    and a separate task on cpu 1 moving the pictures from the queue and adding
-    them to the avi file on the sd card
-  - the loop() task on cpu 1 now just handles the ftp system and http server
+  - program now uses both cores with core 0 taking pictures and queueing them
+    for a separate task on core 1 writing them to the avi file on the sd card
+  - the loop() task on core 1 now just handles the ftp system and http server
   - dropped fixed ip and switch to mDNS with name "desklens", which can be typed into
     browser, and also used as wifi name on router
   - small change to ftp to cooperate with WinSCP program
