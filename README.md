@@ -15,6 +15,24 @@ TimeLapseAvi
     GNU General Public License v3.0
 
 ~~~
+Update Feb 18, 2020
+- Check out https://github.com/s60sc/ESP32-CAM_MJPEG2SD
+
+It is a similar program, but makes a ".mjpeg" file rather than an ".avi" file.
+
+It will also give you the live-stream through the camera on your 
+browser, it will play the videos for you through the browser, and 
+it will record based on a PIR or other sensor that grounds a pin.
+
+And it solves the "Blinding Disk-Active Light" without any soldering or tape.
+
+Reference by amirjak over in the "Issues" section.
+
+I will be borrowing a few of these good ideas in days to come!
+
+~~~
+
+~~~
 Update Oct 15, 2019
 - Make sure you are using esp32 board library 1.03 or better
 - 1.02 has major wifi problems !!!
