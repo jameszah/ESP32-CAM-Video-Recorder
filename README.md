@@ -14,7 +14,7 @@ TimeLapseAvi
     jameszah/ESP32-CAM-Video-Recorder is licensed under the
     GNU General Public License v3.0
 
-~~~
+
 Update Feb 24, 2020 TimeLapseAvi59x.ino
 
 New version # 59
@@ -24,7 +24,7 @@ New version # 59
 - to use PIR or switch, the machine must not be recording, so edit "record_on_reboot" to 0, or use web to stop recording
 - if you want no internet, just leave the fake ssid and password, and it will mark your PIR recording dated 1970
 - I'll rewrite this intro with v59 instructions ... at some point
-~~~
+ 
 Update Feb 18, 2020
 - Check out https://github.com/s60sc/ESP32-CAM_MJPEG2SD
 
@@ -39,14 +39,15 @@ And it solves the "Blinding Disk-Active Light" without any soldering or tape.
 Reference by amirjak over in the "Issues" section.
 
 I will be borrowing a few of these good ideas in days to come!
-~~~
+
+
 Link here: https://github.com/s60sc/ESP32-CAM_MJPEG2SD
-~~~
+
 Update Oct 15, 2019
 - Make sure you are using esp32 board library 1.03 or better
 - 1.02 has major wifi problems !!!
-~~~
-  ~~~
+
+
   Update Sep 15, 2019 TimeLapseAvi39x.ino
   - work-in-progress
   - I'm publishing this as a few people have been asking or working on this
@@ -65,7 +66,7 @@ Update Oct 15, 2019
     You just need the 3 files in the /v23 folder for July version, which takes a picture and stores it
     or the 3 files in the /v39 folder for the current which adds the queueing system to get better
     frame rates, and keep recording if there is a small delay on file system.
-  ~~~
+ 
 
   Acknowlegements:
 
