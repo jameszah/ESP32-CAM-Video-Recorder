@@ -23,6 +23,7 @@ New version # 59
 - pin 12 is now a PIR or switch - hold it high to start a 15 second video, continuing until 10 seconds after it goes low
 - to use PIR or switch, the machine must not be recording, so edit "record_on_reboot" to 0, or use web to stop recording
 - if you want no internet, just leave the fake ssid and password, and it will mark your PIR recording dated 1970
+- default startup is VGA, 10 fps, quailty 10, 30 minutes long, playback realtime, repeat 100 times, and it starts automatically after a reboot
 - I'll rewrite this intro with v59 instructions ... at some point
  
 ## Update Feb 18, 2020
