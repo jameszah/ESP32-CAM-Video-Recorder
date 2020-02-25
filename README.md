@@ -23,6 +23,7 @@ New version # 59
 - to use PIR or switch, the machine must not be recording, so edit "record_on_reboot" to 0, or use web to stop recording
 - if you want no internet, just leave the fake ssid and password, and it will date your PIR recordings as 1970, but keep all your PIR clips timed and dated after 1970, which is better than just numbering them
 - default startup is VGA, 10 fps, quailty 10, 30 minutes long, playback realtime, repeat 100 times, and it starts automatically after a reboot
+- you just need the 3 files from the /v59 folder
 - I'll rewrite this intro with v59 instructions ... at some point
 
 Also, someone did an instructables.com explanation and video about the Sep 15, 2019 version, which is not bad.  
