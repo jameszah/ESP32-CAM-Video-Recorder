@@ -19,11 +19,16 @@ TimeLapseAvi
 New version # 59
 - moved from 4 bit SD access to 1 bit, which frees up gpio pins
 - the Blinding Disk-Access Light is now OFF, without soldering or tape
-- pin 12 is now a PIR or switch - hold it high to start a 15 second video, continuing until 10 seconds after it goes low
+- pin 12 can now be used for a PIR or switch - hold it high to start a 15 second video, continuing until 10 seconds after it goes low
 - to use PIR or switch, the machine must not be recording, so edit "record_on_reboot" to 0, or use web to stop recording
-- if you want no internet, just leave the fake ssid and password, and it will mark your PIR recording dated 1970
+- if you want no internet, just leave the fake ssid and password, and it will date your PIR recordings as 1970, but keep all your PIR clips timed and dated after 1970, which is better than just numbering them
 - default startup is VGA, 10 fps, quailty 10, 30 minutes long, playback realtime, repeat 100 times, and it starts automatically after a reboot
 - I'll rewrite this intro with v59 instructions ... at some point
+
+Also, someone did an instructables.com explanation and video about the Sep 15, 2019 version, which is not bad.  
+I am refered to as "The Team".   :-)
+
+https://www.instructables.com/id/Video-Capture-Using-the-ESP32-CAM-Board/
  
 ## Update Feb 18, 2020
 - Check out https://github.com/s60sc/ESP32-CAM_MJPEG2SD
