@@ -48,19 +48,16 @@ I will be borrowing a few of these good ideas in days to come!
 
 
 ## Update Sep 15, 2019 TimeLapseAvi39x.ino
-  - work-in-progress
-  - I'm publishing this as a few people have been asking or working on this
+- work-in-progress
+- I'm publishing this as a few people have been asking or working on this
   
-  - program now uses both cores with core 0 taking pictures and queueing them
-    for a separate task on core 1 writing them to the avi file on the sd card
-  - the loop() task on core 1 now just handles the ftp system and http server
-  - dropped fixed ip and switch to mDNS with name "desklens", which can be typed into
-    browser, and also used as wifi name on router
-  - small change to ftp to cooperate with WinSCP program
-  - fixed bug so Windows would calulcate the correct length (time length) of avi 
-  - when queue of frames gets full, it slips every other frame to try to catch up
-  - camera is re-configued when changing from UXGA <> VGA to allow for more buffers 
-    with the smaller frames
+- program now uses both cores with core 0 taking pictures and queueing them for a separate task on core 1 writing them to the avi file on the sd card
+- the loop() task on core 1 now just handles the ftp system and http server
+- dropped fixed ip and switch to mDNS with name "desklens", which can be typed into browser, and also used as wifi name on router
+- small change to ftp to cooperate with WinSCP program
+- fixed bug so Windows would calulcate the correct length (time length) of avi 
+- when queue of frames gets full, it skips every other frame to try to catch up
+- camera is re-configued when changing from UXGA <> VGA to allow for more buffers with the smaller frames
     
     You just need the 3 files in the /v23 folder for July version, which takes a picture and stores it
     or the 3 files in the /v39 folder for the current which adds the queueing system to get better
@@ -105,12 +102,13 @@ I will be borrowing a few of these good ideas in days to come!
   the Raspbarian command line ftp works fine, and an old Windows ftp I have called CoffeeCup Free FTP also works, which is what I have been using.
   You can download at about 450 KB/s -- which is better than having to retreive the SD chip if you camera is up in a tree!
   
-http://192.168.1.222/start?framesize=VGA&length=1800&interval=250&quality=10&repeat=100&speed=1&gray=0  -- this is a sample to start a new recording
+http://192.168.1.222/start?framesize=VGA&length=1800&interval=250&quality=10&repeat=100&speed=1&gray=0  
+-- this is a sample to start a new recording
 
 - framesize can be UXGA, SVGA, VGA, CIF (default VGA)
 - length is length in seconds of the recording 0..3600 (default 1800)
 - interval is the milli-seconds between frames (default 200)
-- quality is a number 5..50 for the jpeg  - smaller number is higher quality with bigger and more detailed jpeg (default 10)
+- quality is a number 10..50 for the jpeg  - smaller number is higher quality with bigger and more detailed jpeg (default 10)
 - repeat is a number of who many of the same recordings should be made (default 100)
 - speed is a factor to speed up realtime for a timelapse recording - 1 is realtime (default 1)
 - gray is 1 for a grayscale video (default 0 - color)
@@ -125,8 +123,7 @@ For example, using a LEXAR 300x 32GB microSDHC UHS-I, the following works for me
 
 If you increase fps, you might have to reduce quality or framesize to keep it from dropping frames as it writes all the data to the SD chip.
 
-Also, other SD chips will be faster or slower.  
-I was using a SanDisk 16GB microSDHC "Up to 653X" - which was slower and more unpredictable than the LEXAR ???
+Also, other SD chips will be faster or slower.  I was using a SanDisk 16GB microSDHC "Up to 653X" - which was slower and more unpredictable than the LEXAR ???
 
 Search for "zzz" to find places to modify the code for:
 1.  Your wifi name and password
@@ -136,7 +133,7 @@ Search for "zzz" to find places to modify the code for:
   
 Sample videos produced by the program in the /sample-output folder -- it is not GoPro quality, but then GoPro's don't cost $10.
 
-While not necessay, following is how I dealt with the "Flash" led on the front of the ESP32-CAm chip.
+While not necessay, following is how I dealt with the "Flash" led on the front of the ESP32-CAM chip.
 
 Picture below shows my solution to the "Flash" led, aka "the Blinding Disk-Active light".  The led turns on whenever you are are writing data to the SD chip, which is normally after you have taken the picture, so you don't need the flash on any more!  
 
