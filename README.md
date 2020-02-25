@@ -17,7 +17,7 @@ TimeLapseAvi
 ## Update Feb 24, 2020 TimeLapseAvi59x.ino
 
 New version # 59
-- moved from 4 bit SD access to 1 bit, which frees up gpio pins
+- moved from 4 bit SD access to 1 bit, which frees up gpio pins 4, 12, and 13
 - the Blinding Disk-Access Light is now OFF, without soldering or tape
 - pin 12 can now be used for a PIR or switch - pull it high to start a 15 second video, continuing until 10 seconds after it goes low
 - to use PIR or switch, the machine must not be recording, so edit "record_on_reboot" to 0, or use web to stop recording
