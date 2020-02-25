@@ -12,7 +12,7 @@ TimeLapseAvi
 
   https://github.com/jameszah/ESP32-CAM-Video-Recorder
   
-    jameszah/ESP32-CAM-Video-Recorder is licensed under the GNU General Public License v3.0
+  jameszah/ESP32-CAM-Video-Recorder is licensed under the GNU General Public License v3.0
 
 ## Update Feb 24, 2020 TimeLapseAvi59x.ino
 
