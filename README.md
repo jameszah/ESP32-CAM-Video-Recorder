@@ -15,6 +15,16 @@ TimeLapseAvi
     GNU General Public License v3.0
 
 ~~~
+Update Feb 24, 2020 TimeLapseAvi59x.ino
+
+New version # 59
+- moved from 4 bit SD access to 1 bit, which frees up gpio pins
+- the Blinding Disk-Access Light is now OFF, without soldering or tape
+- pin 12 is now a PIR or switch - hold it high to start a 15 second video, continuing until 10 seconds after it goes low
+- to use PIR or switch, the machine must not be recording, so edit "record_on_reboot" to 0, or use web to stop recording
+- if you want no internet, just leave the fake ssid and password, and it will mark your PIR recording dated 1970
+- I'll rewrite this intro with v59 instructions ... at some point
+~~~
 Update Feb 18, 2020
 - Check out https://github.com/s60sc/ESP32-CAM_MJPEG2SD
 
@@ -29,7 +39,6 @@ And it solves the "Blinding Disk-Active Light" without any soldering or tape.
 Reference by amirjak over in the "Issues" section.
 
 I will be borrowing a few of these good ideas in days to come!
-
 ~~~
 Link here: https://github.com/s60sc/ESP32-CAM_MJPEG2SD
 ~~~
