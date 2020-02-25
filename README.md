@@ -41,8 +41,6 @@ Reference by amirjak over in the "Issues" section.
 I will be borrowing a few of these good ideas in days to come!
 
 
-Link here: https://github.com/s60sc/ESP32-CAM_MJPEG2SD
-
 ## Update Oct 15, 2019
 - Make sure you are using esp32 board library 1.03 or better
 - 1.02 has major wifi problems !!!
