@@ -47,9 +47,7 @@ I will be borrowing a few of these good ideas in days to come!
 
 
 ## Update Sep 15, 2019 TimeLapseAvi39x.ino
-
-- work-in-progress
-- I'm publishing this as a few people have been asking or working on this
+"work-in-progress"  I'm publishing this as a few people have been asking or working on this.
 - program now uses both cores with core 0 taking pictures and queueing them for a separate task on core 1 writing them to the avi file on the sd card
 - the loop() task on core 1 now just handles the ftp system and http server
 - dropped fixed ip and switch to mDNS with name "desklens", which can be typed into browser, and also used as wifi name on router
