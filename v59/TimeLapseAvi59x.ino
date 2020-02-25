@@ -1132,7 +1132,7 @@ void loop()
   if (wakeup - last_wakeup > (14 * 60 * 1000) ) {       // 14 minutes
     last_wakeup = millis();
 
-    sprintf(localip, "%s", WiFi.localIP().toString().c_str());
+    //sprintf(localip, "%s", WiFi.localIP().toString().c_str());
     do_time();
   }
 
