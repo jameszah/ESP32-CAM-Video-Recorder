@@ -19,10 +19,10 @@ TimeLapseAvi
 New version # 59
 - moved from 4 bit SD access to 1 bit, which frees up gpio pins
 - the Blinding Disk-Access Light is now OFF, without soldering or tape
-- pin 12 can now be used for a PIR or switch - hold it high to start a 15 second video, continuing until 10 seconds after it goes low
+- pin 12 can now be used for a PIR or switch - pull it high to start a 15 second video, continuing until 10 seconds after it goes low
 - to use PIR or switch, the machine must not be recording, so edit "record_on_reboot" to 0, or use web to stop recording
 - if you want no internet, just leave the fake ssid and password, and it will date your PIR recordings as 1970, but keep all your PIR clips timed and dated after 1970, which is better than just numbering them
-- default startup is VGA, 10 fps, quailty 10, 30 minutes long, playback realtime, repeat 100 times, and it starts automatically after a reboot
+- default startup is VGA, 10 fps, quailty 10, 30 minutes long, playback realtime, repeat 100 times, and it starts automatically after a reboot -- this is actually a little aggressive for my LEXAR 300x 32GB microSDHC UHS-I, which will usually keep up with 10 fps, but will sometimes start skipping
 - you just need the 3 files from the /v59 folder
 - I'll rewrite this intro with v59 instructions ... at some point
 
