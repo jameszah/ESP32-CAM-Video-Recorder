@@ -14,6 +14,18 @@ TimeLapseAvi
   
   jameszah/ESP32-CAM-Video-Recorder is licensed under the GNU General Public License v3.0
 
+## Update Feb 25, 2020 Sample Hardware for PIR Camera
+
+This is a bit of hardware to set up a camera recording to SD Card whenever something moves.
+
+<img src="./demo_fritz.jpg">
+
+<img src="./demo1.jpg">
+
+<img src="./demo2.jpg">
+
+<img src="./demo3.jpg">
+
 ## Update Feb 24, 2020 TimeLapseAvi59x.ino
 
 New version # 59
