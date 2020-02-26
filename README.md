@@ -39,20 +39,20 @@ New version # 59
 - I'll rewrite this intro with v59 instructions ... at some point
 
 Also, someone did an instructables.com explanation and video about the Sep 15, 2019 version, which is not bad.  
-I am refered to as "The Team".   :-)
+I am refered to as "The Team"   :-)
 
 https://www.instructables.com/id/Video-Capture-Using-the-ESP32-CAM-Board/
 
 Other general advice about the ESP32-CAM.
 - put a capacitor between the +5 and Ground to prevent the frequent "brownout" problems.  I saw 220 microFarad recommended somewhere, and it works good.
-- keep the antenna part of the chip - the part with the squiggly line - above and away from your circuit board or any wires.  The internet speed with improve dramatically with just 1 or 2 mm of extra space.
+- keep the antenna part of the chip - the part with the squiggly line - above and away from your circuit board or any wires.  The internet speed will improve dramatically with just 1 or 2 mm of extra space.
  
 ## Update Feb 18, 2020
 - Check out https://github.com/s60sc/ESP32-CAM_MJPEG2SD
 
 It is a similar program, but makes a ".mjpeg" file rather than an ".avi" file.
 
-It will also give you the live-stream through the camera on your 
+It will also give you the live-stream through the camera to your 
 browser, it will play the videos for you through the browser, and 
 it will record based on a PIR or other sensor that grounds a pin.
 
