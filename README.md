@@ -26,17 +26,19 @@ This is a bit of hardware to set up a camera recording to SD Card whenever somet
 
 <img src="./demo3.jpg">
 
-## Update Feb 24, 2020 TimeLapseAvi59x.ino
+## Update Feb 26, 2020 TimeLapseAvi60x.ino
 
-New version # 59
+New version # 60
 - moved from 4 bit SD access to 1 bit, which frees up gpio pins 4, 12, and 13
 - the Blinding Disk-Access Light is now OFF, without soldering or tape
 - pin 12 can now be used for a PIR or switch - pull it high to start a 15 second video, continuing until 10 seconds after it goes low
 - to use PIR or switch, the machine must not be recording, so edit "record_on_reboot" to 0, or use web to stop recording
 - if you want no internet, just leave the fake ssid and password, and it will date your PIR recordings as 1970, but keep all your PIR clips timed and dated after 1970, which is better than just numbering them
 - default startup is VGA, 10 fps, quailty 10, 30 minutes long, playback realtime, repeat 100 times, and it starts automatically after a reboot -- this is actually a little aggressive for my LEXAR 300x 32GB microSDHC UHS-I, which will usually keep up with 10 fps, but will sometimes start skipping
-- you just need the 3 files from the /v59 folder
-- I'll rewrite this intro with v59 instructions ... at some point
+- also implemented dates and times in ftp which had been mysteriously missing.  The "Date Modified" on Windows should now be the correct time the file was completed on the ESP32.  The "Date Created" will be the time you ftp'ed it.  And the time in the file name is the time the file was started recording on the ESP32.
+- also note that the file names of the PIR files are all just "L15" (the original creation of the file), but the files themselves will be as long as the PIR had activity.  I haven't updated the filename for the eventual length.
+- you just need the 3 files from the /v60 folder
+- I'll rewrite this intro with v60 instructions ... at some point
 
 Also, someone did an instructables.com explanation and video about the Sep 15, 2019 version, which is not bad.  
 I am refered to as "The Team"   :-)
