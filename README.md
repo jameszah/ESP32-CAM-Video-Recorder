@@ -18,7 +18,7 @@ TimeLapseAvi
 
 This is a bit of hardware to set up a camera recording to SD Card whenever something moves.
 
-<img src="./demo_fritz.jpg">
+<img src="./demo_fritz.jpg">(my microUSB adapter is different from the one in the library)
 
 <img src="./demo1.jpg">
 
