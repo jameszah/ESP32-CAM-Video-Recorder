@@ -14,11 +14,21 @@ TimeLapseAvi
   
   jameszah/ESP32-CAM-Video-Recorder is licensed under the GNU General Public License v3.0
 
+## Update Feb 29, 2020 Sample Hardware for Microwave Camera
+
+This is a bit of hardware to set up a camera recording to SD Card whenever something moves, as seen through a microwave device, and adds a led so you can see when the camera sees you!
+
+<img src="./demo_fritz2.jpg">
+
+<img src="./demo4.jpg">
+
+<img src="./deom5.jpg">
+
 ## Update Feb 25, 2020 Sample Hardware for PIR Camera
 
 This is a bit of hardware to set up a camera recording to SD Card whenever something moves.
 
-<img src="./demo_fritz.jpg">(my microUSB adapter is different from the one in the library)
+<img src="./demo_fritz2.jpg">(my microUSB adapter is different from the one in the library)
 
 <img src="./demo1.jpg">
 
