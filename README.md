@@ -18,7 +18,7 @@ TimeLapseAvi
 
 This is a bit of hardware to set up a camera recording to SD Card whenever something moves, as seen through a microwave device, and adds a led so you can see when the camera sees you!
 
-<img src="./demo_fritz2.jpg">
+<img src="./demo_fritz3.jpg">
 
 <img src="./demo4.jpg">
 
