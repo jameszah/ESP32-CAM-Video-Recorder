@@ -50,8 +50,8 @@ TimeLapseAvi
 - You just need the files from the /v86 folder. Edit the settings.h file for your wifi and starup configuration.
    
  # Hardware   
-- to use PIR function, put an active high PIR or microwave on pin 12 with a 10k resistor (brown,black,orange) between pin 12 and PIR output to avoid antagonizing sd card
-- to use Touch function, put a wire (with optional metal touch point) on pin 13 and touch it to enable/disable pir
+- to use PIR function, put an active high PIR or microwave on pin 13 with a 10k resistor (brown,black,orange) between pin 13 and PIR output to avoid antagonizing sd card
+- to use Touch function, put a wire (with optional metal touch point) on pin 12 and touch it to enable/disable pir
 - Blinding Disk-Active Light will give little blink during a touch, or when starting a recording
 - red led on back with blink with every frame if you have that enabled in settings
 
