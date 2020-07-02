@@ -62,6 +62,10 @@ And the /stop page to restart with new parameters
 
 <img src="./v86/v86-stop.jpg">
 
+And what it looks like on your phone Telegram App
+
+<img src="./v86/v86-Telegram.jpg">
+
 ## Update Feb 29, 2020 Sample Hardware for Microwave Camera
 
 This is a bit of hardware to set up a camera recording to SD Card whenever something moves, as seen through a microwave device, and adds a led so you can see when the camera sees you!
