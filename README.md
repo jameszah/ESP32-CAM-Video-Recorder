@@ -14,6 +14,54 @@ TimeLapseAvi
   
   jameszah/ESP32-CAM-Video-Recorder is licensed under the GNU General Public License v3.0
 
+## Update Jun 30, 2020 Version 86 - some new features
+
+<img src="./v86/v86.jpg">
+
+ # Software   
+- redo camera scheduler to reduce frame skips with slight delays between frames
+- move more processing to separate priority tasks, and remove from idle loop()
+- most tasks suspened waiting for events, rather than loopong checking for events, ... except ftp which still loops wating for ftp requests
+- added a sd card snapshot jpg at beginning of every movie
+- added a telegram.org message with opening picture and info about diskspace and rssi to follow camera activity on your computer or phone
+- added deepsleep feature to wake on PIR, and then deepsleep after movie is recorded
+- added touch sensor on pin12 to enable/disable the pir sensor 
+- added more careful setup of difficult pins 12, 13, and 4 - used for SD and re-used for PIR, Touch, and Blinding Disk-Active Light
+- added brownout handler to close files on brownout, which didn't work, but at least I can deepsleep to prevent multiple brownout reboots.  (Inside a brownout handler, you have only 300ms and you cannot access wifi, sd, or flash, ... so cannot close files, or send message.)
+- re-used pin 4 Blinding Disk-Active Light to blink gently at beginning of movie, and at a Touch - ironically, also turns on during Brownout ;-)
+- added several functions to enable / disable pir or bot using internet
+   
+  - http://desklens.local/bot_enable
+  - http://desklens.local/bot_disable
+  - http://desklens.local/pir_enable
+  - http://desklens.local/pir_disable
+    
+  - http://desklens.local/ ... look through viewfinder and see status
+    
+  - http://desklens.local/stop
+  - http://desklens.local/start  ... with existing or default parameters
+  - http://desklens.local/start?framesize=VGA&length=1800&interval=250&quality=10&repeat=100&speed=1&gray=0 
+    - see below or settings.h
+     
+- moved many settings to a separate file "settings.h" so you edit that, rather than digging through the main file to set your wifi password, startup defaults, and enable/disable internet, pir, telegram, etc
+- not super-elegant code ... still haven't written the avi writer into a nice library
+- read comment on rtc_cntl.h below which may or may not be updated in the esp32 board library - links and info below 
+   
+ # Hardware   
+- to use PIR function, put an active high PIR or microwave on pin 12 with a 10k resistor (brown,black,orange) between pin 12 and PIR output to avoid antagonizing sd card
+- to use Touch function, put a wire (with optional metal touch point) on pin 13 and touch it to enable/disable pir
+- Blinding Disk-Active Light will give little blink during a touch, or when starting a recording
+- red led on back with blink with every frame if you have that enabled in settings
+
+
+Here is the "/" status page
+
+<img src="./v86/v86-status.jpg">
+
+And the /stop page to restart with new parameters 
+
+<img src="./v86/v86-stop.jpg">
+
 ## Update Feb 29, 2020 Sample Hardware for Microwave Camera
 
 This is a bit of hardware to set up a camera recording to SD Card whenever something moves, as seen through a microwave device, and adds a led so you can see when the camera sees you!
