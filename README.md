@@ -46,6 +46,7 @@ TimeLapseAvi
 - moved many settings to a separate file "settings.h" so you edit that, rather than digging through the main file to set your wifi password, startup defaults, and enable/disable internet, pir, telegram, etc
 - not super-elegant code ... still haven't written the avi writer into a nice library
 - read comment on rtc_cntl.h below which may or may not be updated in the esp32 board library - links and info below 
+- You just need the files from the /v86 folder. Edit the settings.h file for your wifi and starup configuration.
    
  # Hardware   
 - to use PIR function, put an active high PIR or microwave on pin 12 with a 10k resistor (brown,black,orange) between pin 12 and PIR output to avoid antagonizing sd card
