@@ -21,7 +21,7 @@ TimeLapseAvi
  # Software   
 - redo camera scheduler to reduce frame skips with slight delays between frames
 - move more processing to separate priority tasks, and remove from idle loop()
-- most tasks suspened waiting for events, rather than loopong checking for events, ... except ftp which still loops wating for ftp requests
+- most tasks suspend waiting for events, rather than looping checking for events, ... except ftp which still loops wating for ftp requests
 - added a sd card snapshot jpg at beginning of every movie
 - added a telegram.org message with opening picture and info about diskspace and rssi to follow camera activity on your computer or phone
 - added deepsleep feature to wake on PIR, and then deepsleep after movie is recorded
