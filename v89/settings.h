@@ -50,5 +50,5 @@ volatile int  total_frames_config = 360;  //  how many frames - length of movie 
 // You need to create a bot, and get its number BOTtoken, and then get your telegram number -- all free at telegram.org
 
 RTC_DATA_ATTR int EnableBOT = 0;
-//#define BOTtoken  "9876543210:qwertyuiopasdfghjklzxcvbnmqwertyuio"   // get your own bot and id at telegram.org 
-//#define BOTme     "1234567890"
+#define BOTtoken  "9876543210:qwertyuiopasdfghjklzxcvbnmqwertyuio"   // get your own bot and id at telegram.org 
+#define BOTme     "1234567890"
