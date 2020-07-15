@@ -49,6 +49,8 @@ TimeLapseAvi
 
 The serial debug monitor shows you your ip address, and the web page uses the ip, rather than hoping that you can resolve mDNS everytime.
 
+You just need the files from the /v89 folder. Edit the settings.h file for your wifi and startup configuration.
+
 ## Update Jun 30, 2020 Version 86 - some new features
 
 <img src="./v86/v86.jpg">
