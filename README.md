@@ -14,6 +14,41 @@ TimeLapseAvi
   
   jameszah/ESP32-CAM-Video-Recorder is licensed under the GNU General Public License v3.0
 
+## Update Jul 15, 2020 Version 89 - more new stuff
+
+- added some code to save the configuration in eprom, so your device will always reboot to the state it was in from the most recent /start command.  The previous system just had a hardcoded configuration, and let you /stop and /start in a new configuration, but after a series of squirrel attacks, I moved to the eprom solution.  It always starts where it was, although a movie in progress during the squirrel attack will be lost. You can enable or disable the telegram bot or PIR sensor with a web-page click, and that too will be added to the eprom, so it reboots with or without bot updates or PIR control.  On reboot, it will check your eprom to see if there are parameters, and if so it will use them, or else use the hardcoded parameters from settings.h, and then write those paramters into eprom for next boot.  Change the eprom parameters with the /start command below.
+
+- changed the movie start procedure a little.  It now takes a snapshot at beginning of movie, saves it as a .jpg, and if Telegram bot is enabled sends that same picture to your telegram so you can monitor the activity on your phone, or use that jpg if you want.  It does take several seconds to send the picture to telegram.  And only after that does it start recording the movie.  I attempted to do the telegram send after the movie started recording, but the telegram uses SSL security which needs 50k or more of heap, which would sometimes leave too little heap to work the SD card.  Also the reboot from deepsleep takes a couple seconds, then starting internet takes a couple seconds, then telegram bot takes a couple seconds, and then the movie starts.  So if you want fast-start, then don't use deepsleep, turn off internet, and obviously turn off telegram.
+
+- changed reprogramming the camera a little.  It used to re-set frame-size, quality with every movie, but now it is just when you make changes and at reboot.
+
+- I have switched to quality = 12 which is better for sunny days, and does noticably increase frame-rate.  I can usually get SVGA working at 10 frames per second, which is decent realtime video.
+
+  - http://desklens.local/bot_enable
+  - http://desklens.local/bot_disable
+  - http://desklens.local/pir_enable
+  - http://desklens.local/pir_disable
+   
+  - http://desklens.local/ ... look through viewfinder and see status
+    
+  - http://desklens.local/stop
+  - http://desklens.local/start  ... with existing or default parameters
+  - http://desklens.local/start?framesize=VGA&length=1800&interval=250&quality=10&repeat=100&speed=1&gray=0&pir=0&bot=1
+
+    -  framesize can be UXGA, SVGA, VGA, CIF 
+    -  length is length in seconds of the recording
+    -  interval is the milli-seconds between frames 
+    -  quality is a number 10..50 for the jpeg  - smaller number is higher quality with bigger and more detailed jpeg 
+    -  repeat is a number of who many of the same recordings should be made
+    -  speed is a factor to speed up realtime for a timelapse recording - 1 is realtime 
+    -  gray is 1 for a grayscale video 
+    -  pir is 1 to start a 15 seconds movie if pir sensor pulls high, and continue to 10 seconds after pir goes low
+    -  bot is 1 will send the opening frame of movie to your Telegram App
+
+  - ftp://desklens.local/ ... use ftp to download or erase old files ... username and password "esp" which is set in the code
+
+The serial debug monitor shows you your ip address, and the web page uses the ip, rather than hoping that you can resolve mDNS everytime.
+
 ## Update Jun 30, 2020 Version 86 - some new features
 
 <img src="./v86/v86.jpg">
