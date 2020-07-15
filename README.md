@@ -39,7 +39,7 @@ TimeLapseAvi
     -  length is length in seconds of the recording
     -  interval is the milli-seconds between frames 
     -  quality is a number 10..50 for the jpeg  - smaller number is higher quality with bigger and more detailed jpeg 
-    -  repeat is a number of who many of the same recordings should be made
+    -  repeat is a number of how many of the same recordings should be made
     -  speed is a factor to speed up realtime for a timelapse recording - 1 is realtime 
     -  gray is 1 for a grayscale video 
     -  pir is 1 to start a 15 seconds movie if pir sensor pulls high, and continue to 10 seconds after pir goes low
