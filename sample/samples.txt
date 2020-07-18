@@ -1,3 +1,5 @@
+... moved to https://github.com/jameszah/ESP32-CAM-Video-Recorder-samples
+
 Some samples of the files produced by this program (before I added interval to filename).
 
 File name shows the date and time of the video starts, then frame size (uxga,svga,vga,cif), 
