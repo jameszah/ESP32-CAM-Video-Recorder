@@ -14,6 +14,44 @@ TimeLapseAvi
   
   jameszah/ESP32-CAM-Video-Recorder is licensed under the GNU General Public License v3.0
 
+## Update Aug 29, 2020 Version 94 - live stream and filter bad jpegs
+
+A couple new things.
+
+I added some code to filter out bad jpegs.  This happens when you have high quality jpeg settings, and then take a movie in bright light, and some of the jpegs exceed the memory allocated, and you get a partial jpeg, which will screw up the index, and break an entire avi.  So there is now code to find those bad jpegs, and get a new frame that is good.  Read more about this here if interested.
+https://github.com/espressif/esp32-camera/issues/162
+
+This means it is safe to increase the jpeg quality to 7 (maybe 6?) from the standard setting of 10, or 12 in bright sun.  Lower number is higher quality.  Higher quality will mean more bytes, bigger files, and slower to write.  It is debatable if you want very high quality jpegs if they are flashing along at 24 frames per second.
+
+Another new feature is a streaming video.  There is the single frame on the main status screen so you code see what your camera sees, but the streaming has been much requested to get a better look through the viewfinder, and maybe save the stream.
+
+You set a parameter in settings.h of milli-seconds between updates, and then click on the /stream link on the main web page and it will stream to a new browser window.  Hit "back" to get back to the main page.
+
+To save the video coming to the browser, do the following -- I tried to figure this out before but could not find it on google.  
+
+1.  Click on the /stream on the web page, and you will see the moving picture.
+2.  Right-click and select "save image as ...", type a name, and it will start saving the series of jpegs to a file.
+3.  You have to stop the save, which as far as I can figure out, you have to select cancel from the menu of the ever increasing file.  But that will delete the file that you have been saving.  So the kludge is to "show in folder" to find the file, then copy the file, then do the cancel.  Then you have to rename that file to x.mjpeg, and then you can play it.  Most programs that play .avi files will not play the .mjpeg, but some will. See VLC below.  Very inelegant.
+
+Another method is to use the VLC media player program.  
+1.  Media - Open Network Stream - paste in the url such as http://192.168.1.90/stream
+2. Then in the Play menu, switch it to Convert, click on "Dump Raw Input" and type filename ending in .mjpeg, and click Start.  When you are down saving, click the square stop button.  You will get a .mjpeg file which can be played in VLC and some other video or picture players.  An mjpeg does not understand time, so it will play the picture as quick as it can, and you have have to enter new information about the time between frames to get it to play as you want.
+
+VLC seems to have controls there to convert the file to various formats like h264, wmv, etc. but I could not get that to work. 
+
+If anyone has better ways to capture the live stream, or capture and covert it, please let us know in the comments.
+
+I have not really studied how the streaming interacts with the recording.  But 3 fps streaming seems to work fine with 8 fps svga recording.  More work to be done there.  I reduced the http task priorty to below the picture-taking and avi-writing tasks, so the the streaming should slow down before the recording.  It seems the esp32 http server can only handle one client at a time, so you cannot stream to one browser and check the status on another browser. 
+
+Another small feature is that you can now tell the recorder to /stop, and then /start with no parameters, and it will restart according to the original start parameters.  Not only the framesize and interval, but if you set it to record 100 videos, and it has 5 left, after a /stop and /start it will restart at 100 videos.
+
+Also if you have some parameters in EPROM, and your are doing a new compile with changes and you do not want to use those EPROM parameters, there is a setting called MagicNumber in the settings.h.  Just change the MagicNumber, and the program will skip the EPROM settings and write your new settings from settings.h
+
+I changed to default startup settings to VGA 10 frames per second, play at realtime, with no PIR or BOT.
+
+<img src="./v94/web_v94.jpg">
+
+
 ## Update Jul 15, 2020 Version 89 - more new stuff
 
 - added some code to save the configuration in eprom, so your device will always reboot to the state set in your most recent /start command.  The previous system just had a hardcoded configuration, and let you /stop and /start in a new configuration, but after a series of squirrel attacks, I moved to the eprom solution.  It always starts where it was, although a movie in progress during the squirrel attack will be lost. You can enable or disable the telegram bot or PIR sensor with a web-page click, and that too will be added to the eprom, so it reboots with or without bot updates or PIR control.  On reboot, it will check your eprom to see if there are parameters, and if so it will use them, or else use the hardcoded parameters from settings.h, and then write those paramters into eprom for next boot.  Change the eprom parameters with the /start command below.
