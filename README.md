@@ -14,6 +14,14 @@ TimeLapseAvi
   
   jameszah/ESP32-CAM-Video-Recorder is licensed under the GNU General Public License v3.0
 
+## Update Sep 13, 2020 
+
+Check out a much simpler, somewhat faster version ESP32-CAM-Video_Recorder-junior.
+
+It gets rid of wifi, http, time, ftp, telegram, pir, touch, .... and just records very fast -- pretty much at the full speed of the camera -- with a decent SD card and reasonable quality parameters.
+
+https://github.com/jameszah/ESP32-CAM-Video-Recorder-junior
+
 ## Update Aug 29, 2020 Version 94 - live stream and filter bad jpegs
 
 A couple new things.
