@@ -20,6 +20,8 @@ Check out a much simpler, somewhat faster version ESP32-CAM-Video_Recorder-junio
 
 It gets rid of wifi, http, time, ftp, telegram, pir, touch, .... and just records very fast -- pretty much at the full speed of the camera -- with a decent SD card and reasonable quality parameters.
 
+The latest version of junior v07 adds back the streaming video, and series of photos over wifi, and will record at 6 fps UXGA and 24 fps SVGA, but otherwise remains quite uncomplicated.
+
 https://github.com/jameszah/ESP32-CAM-Video-Recorder-junior
 
 ## Update Aug 29, 2020 Version 94 - live stream and filter bad jpegs
