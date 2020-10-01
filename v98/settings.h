@@ -1,7 +1,7 @@
 static const char devname[] = "desklens";         // name of your camera for mDNS, Router, and filenames
 
 #define include_telegram
-//#define include_pir_and_touch
+#define include_pir_and_touch
 #define include_ftp
 #define include_streaming
 #define get_rid_of_touch
