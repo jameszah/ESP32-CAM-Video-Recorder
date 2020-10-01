@@ -14,6 +14,13 @@ TimeLapseAvi
   
   jameszah/ESP32-CAM-Video-Recorder is licensed under the GNU General Public License v3.0
 
+## Update Sep 29, 2020 - Version 98
+
+Added a feature to automatically delete your oldest day of videos when the SD reaches 90% full.
+
+There are also some compile directives in the settings.h file to cut out entire sections of code like the ftp or telegram, if you need resouces to add your own stuff.
+
+
 ## Update Sep 13, 2020 
 
 Check out a much simpler, somewhat faster version ESP32-CAM-Video_Recorder-junior.
