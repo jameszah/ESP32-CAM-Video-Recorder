@@ -9,8 +9,7 @@ static const char devname[] = "desklens";         // name of your camera for mDN
 int delete_old_files = 1;       // set to 1 and it will delete your oldest day of files so you SD is always 10% empty
 
 // https://sites.google.com/a/usapiens.com/opnode/time-zones  -- find your timezone here
-//#define TIMEZONE "GMT0BST,M3.5.0/01,M10.5.0/02"             // your timezone  -  this is GMT
-#define TIMEZONE "MST7MDT,M3.2.0/2:00:00,M11.1.0/2:00:00"     // mountain time
+#define TIMEZONE "GMT0BST,M3.5.0/01,M10.5.0/02"             // your timezone  -  this is GMT
 
 // 1 for blink red led with every sd card write, at your frame rate
 // 0 for blink only for skipping frames and SOS if camera or sd is broken
