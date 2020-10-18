@@ -462,7 +462,7 @@ WiFiEventId_t eventID;
 #include "soc/rtc_cntl_reg.h"
 #include "driver/rtc_io.h"
 
-#ifdef include_telegram
+#ifdef include_pir_and_touch
 
 long TouchDeBounce = 0;
 
