@@ -14,6 +14,19 @@ TimeLapseAvi
   
   jameszah/ESP32-CAM-Video-Recorder is licensed under the GNU General Public License v3.0
 
+## Update Jan 06, 2021 - Version 98-WiFiMan
+
+Just the same as Verion 98, but you can configure the ssid and password using WiFiManager.  
+Use the normal WiFiManager procedure to set up ssid with 192.168.4.1 etc https://github.com/tzapu/WiFiManager
+The only difference is that you have to reboot the esp32 after you have set the ssid/pass for it to work correctly.
+Read more about it here https://github.com/tzapu/WiFiManager/issues/1184
+
+And you must use the latest WiFiManager code which supports the ESP32 - currently 2.0.3-alpha which can be installed from Arduino IDE - Manage Libraries.
+The WiFiManager could be enhanced to set parameters that cannot be set from hhtp, such as Telegram name and password, but haven't done that yet.
+
+
+https://github.com/jameszah/ESP32-CAM-Video-Recorder/tree/master/v98-WiFiMan
+
 ## Update Sep 29, 2020 - Version 98
 
 Added a feature to automatically delete your oldest day of videos when the SD reaches 90% full.
