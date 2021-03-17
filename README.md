@@ -14,6 +14,13 @@ TimeLapseAvi
   
   jameszah/ESP32-CAM-Video-Recorder is licensed under the GNU General Public License v3.0
 
+## Update Mar 17, 2021 - arduino-esp32 ver 1.05
+
+It would be best to use arduino-esp32 version 1.04 until I scan through this for update problems.  
+1.05 was released in late Feb 2021, has has some new framesizes, aspect rations, and some changes in the WiFi, that need some code changes.
+
+![image](https://user-images.githubusercontent.com/36938190/111499024-21b61000-8708-11eb-8e6a-5e35f411c694.png)
+
 ## Update Jan 06, 2021 - Version 98-WiFiMan
 
 Just the same as Verion 98, but you can configure the ssid and password using WiFiManager.  
