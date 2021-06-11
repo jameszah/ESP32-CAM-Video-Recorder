@@ -14,6 +14,13 @@ TimeLapseAvi
   
   jameszah/ESP32-CAM-Video-Recorder is licensed under the GNU General Public License v3.0
 
+## Update Jun 10, 2021 - new program to check out
+
+It records a video and sends it to your Telegram account - no SD card!
+Now I just do some updates on this one!
+
+https://github.com/jameszah/ESP32-CAM-Video-Telegram
+
 ## Update Mar 17, 2021 - arduino-esp32 ver 1.05
 
 It would be best to use arduino-esp32 version 1.04 until I scan through this for update problems.  
