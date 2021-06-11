@@ -17,7 +17,7 @@ TimeLapseAvi
 ## Update Jun 10, 2021 - new program to check out
 
 It records a video and sends it to your Telegram account - no SD card!
-Now I just do some updates on this one!
+Now I just need to do some updates on this one!
 
 https://github.com/jameszah/ESP32-CAM-Video-Telegram
 
