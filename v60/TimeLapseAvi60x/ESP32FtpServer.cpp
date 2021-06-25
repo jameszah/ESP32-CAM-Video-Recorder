@@ -442,8 +442,7 @@ boolean FtpServer::processCommand()
           Serial.println("File Name = "+ fn);
           #endif
           fs = String(file.size());
-          
-          /*  jz feb2020 code from https://github.com/espressif/arduino-esp32/blob/master/libraries/SD_MMC/examples/SDMMC_time/SDMMC_time.ino
+         /*  jz feb2020 code from https://github.com/espressif/arduino-esp32/blob/master/libraries/SD_MMC/examples/SDMMC_time/SDMMC_time.ino
            *   to implement file dates and times for the esp32 ftp
            
            
@@ -472,7 +471,7 @@ boolean FtpServer::processCommand()
           } else {
             // jz start
             char the_date[26];
-            sprintf(the_date, "%02d-%02d-%04d  %02d:%02d ",( tmstruct->tm_mon)+1, tmstruct->tm_mday, (tmstruct->tm_year)+1900,tmstruct->tm_hour, tmstruct->tm_min);
+            sprintf(the_date, "%02d-%02d-%04d  %02d:%02d ", ( tmstruct->tm_mon)+1, tmstruct->tm_mday, (tmstruct->tm_year)+1900,tmstruct->tm_hour, tmstruct->tm_min);
             data.println(the_date + fs + " " + fn);
             //jz end
            

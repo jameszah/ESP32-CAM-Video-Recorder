@@ -29,19 +29,19 @@
 
 static const char vernum[] = "v60";               // version 60 Feb 26, 2020 - added dates/times to ftp
                                                   // version 59 Feb 23, 2020 - switch to 1 bit system, and pir
-static const char devname[] = "desklens";         // name of your camera for mDNS, Router, and filenames
+static const char devname[] = "esp32-cam";        // name of your camera for mDNS, Router, and filenames
 
 
-#define TIMEZONE "GMT0BST,M3.5.0/01,M10.5.0/02"             // your timezone  -  this is GMT
-
+//#define TIMEZONE "GMT0BST,M3.5.0/01,M10.5.0/02"             // your timezone  -  this is GMT
+#define TIMEZONE "MSK"             // your timezone  -  this is GMT
 
 // 1 for blink red led with every sd card write, at your frame rate
 // 0 for blink only for skipping frames and SOS if camera or sd is broken
 #define BlinkWithWrite 0
 
 // EDIT ssid and password
-const char ssid[] = "wifiRouter";           // your wireless network name (SSID)
-const char password[] = "wifipassword";  // your Wi-Fi network password
+const char ssid[] = "efim-home";           // your wireless network name (SSID)
+const char password[] = "asdasdasdasd";  // your Wi-Fi network password
 
 // startup defaults for first recording
 
@@ -56,13 +56,14 @@ const char password[] = "wifipassword";  // your Wi-Fi network password
 
 int record_on_reboot = 1;          // set to 1 to record, or 0 to NOT record on reboot
 int  framesize = 6;                // vga  (10 UXGA, 7 SVGA, 6 VGA, 5 CIF)
-int  repeat = 100;                 // 100 files
+int  repeat = 200;                 // 100 files
 int  xspeed = 1;                   // 1x playback speed (realtime is 1)
 int  gray = 0;                     // not gray
 int  quality = 10;                 // 10 on the 0..64 scale, or 10..50 subscale - 10 is good, 20 is grainy and smaller files
 int  capture_interval = 100;       // 100 ms or 10 frames per second
 int  total_frames = 18000;         // 18000 frames = 10 fps * 60 seconds * 30 minutes = half hour
-
+int  flush_interval = 1000;        // flush file data to SD - 1000ms = 1s
+// PIR pin. Set to HIGH to record a 15-sec clip
 int PIRpin = 12;  
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -174,7 +175,7 @@ camera_fb_t * fb = NULL;
 
 FILE *avifile = NULL;
 FILE *idxfile = NULL;
-
+uint32_t flush_counter = 0;
 
 #define AVIOFFSET 240 // AVI main header length
 
@@ -389,7 +390,7 @@ void setup() {
   Serial.printf("Used space: %lluMB\n", SD_MMC.usedBytes() / (1024 * 1024));
 
   digitalWrite(33, HIGH);         // red light turns off when setup is complete
-
+  
   baton = xSemaphoreCreateMutex();
 
   xTaskCreatePinnedToCore(
@@ -781,7 +782,7 @@ static esp_err_t start_avi() {
     Serial.println("Wrong framesize");
     sprintf(fname, "/sdcard/%s_%s_xxx_Q%d_I%d_L%d_S%d.avi", devname, strftime_buf, quality, capture_interval, xlength, xspeed);
   }
-
+  
   Serial.print("\nFile name will be >"); Serial.print(fname); Serial.println("<");
 
   avifile = fopen(fname, "w");
@@ -860,6 +861,8 @@ static esp_err_t start_avi() {
   }
 
   fseek(avifile, AVIOFFSET, SEEK_SET);
+  fflush(avifile);
+  fsync(fileno(avifile));
 
   Serial.print(F("\nRecording "));
   Serial.print(total_frames);
@@ -940,6 +943,8 @@ static esp_err_t another_save_avi() {
 
     print_quartet(idx_offset, idxfile);
     print_quartet(jpeg_size, idxfile);
+    fflush(idxfile);
+    fsync(fileno(idxfile));
 
     idx_offset = idx_offset + jpeg_size + remnant + 8;
 
@@ -963,6 +968,16 @@ static esp_err_t another_save_avi() {
 
     fileposition = ftell (avifile);
     fseek(avifile, fileposition + jpeg_size - 10 , SEEK_SET);
+
+    // Flush file content
+    // Timer is not so accurate, but at least it will write content eventually :)
+    if (flush_counter * capture_interval >= flush_interval) {
+      fflush(avifile);
+      fsync(fileno(avifile));      
+      flush_counter = 0;
+    }
+    flush_counter++;
+    
     //Serial.println("Write done");
     //41 totalw = totalw + millis() - bw;
 
