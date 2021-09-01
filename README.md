@@ -31,7 +31,7 @@ Lightly tested!
 More frequent updates with better code at these spin-offs of this original project.
 
 https://github.com/jameszah/ESP32-CAM-Video-Recorder-junior   
-This simple fast recording and streaming, with http just for information - no controls.
+This simple fast recording and streaming, with http just for information - no controls or ftp.
 
 https://github.com/jameszah/ESP32-CAM-Video-Telegram   
 This records and sends a short video to telegram on request or PIR event, using the telegram interface.
