@@ -14,6 +14,28 @@ TimeLapseAvi
   
   jameszah/ESP32-CAM-Video-Recorder is licensed under the GNU General Public License v3.0
 
+## Update Sep 1, 2021 - small update for arduino-esp32 1.0.6
+
+Minimal update for arduino-esp32 1.0.6.
+
+The framesizes numbers changed which I had used on the http url command, so those were updated.   
+Add the new frame size HD (1280x720).   
+Some updates for the new SSL libraries to keep the telegram interface working.   
+You need all the files in the v99 folder.  And Arduino esp32 board library set to 1.0.6.   
+You can still use the previous version with the esp32 board library set to 1.0.4.   
+
+<img src="./v99/v99.jpg">   
+
+Lightly tested! 
+
+More frequent updates with better code at these spin-offs of this original project.
+
+https://github.com/jameszah/ESP32-CAM-Video-Recorder-junior   
+This simple fast recording and streaming, with http just for information - no controls.
+
+https://github.com/jameszah/ESP32-CAM-Video-Telegram   
+This records and sends a short video to telegram on request or PIR event, using the telegram interface.
+
 ## Update Jun 10, 2021 - new program to check out
 
 It records a video and sends it to your Telegram account - no SD card!
