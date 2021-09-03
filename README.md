@@ -14,6 +14,9 @@ TimeLapseAvi
   
   jameszah/ESP32-CAM-Video-Recorder is licensed under the GNU General Public License v3.0
 
+v99 for arduino-esp32 1.0.6   
+v98 for arduino-esp32 1.0.4   
+
 ## Update Sep 1, 2021 - small update for arduino-esp32 1.0.6
 
 Minimal update for arduino-esp32 1.0.6.
