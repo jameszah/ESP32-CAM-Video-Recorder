@@ -17,6 +17,10 @@ TimeLapseAvi
 v99 for arduino-esp32 1.0.6   
 v98 for arduino-esp32 1.0.4   
 
+Note line 1413 -- this current version uses the WiFiManager for all WiFi setup.  Change this line if you want to use the previous version of hardcoded ssid and password.
+
+https://github.com/jameszah/ESP32-CAM-Video-Recorder/blob/f90207b74c8ac247ef20f3cde9664b5f80844a02/v99/TimeLapseAvi99x.ino#L1413
+
 ## Update Sep 1, 2021 - small update for arduino-esp32 1.0.6
 
 Minimal update for arduino-esp32 1.0.6.
