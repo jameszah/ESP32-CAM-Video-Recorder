@@ -122,7 +122,7 @@ Also if you have some parameters in EPROM, and your are doing a new compile with
 
 I changed to default startup settings to VGA 10 frames per second, play at realtime, with no PIR or BOT.
 
-<img src="./v94/web_v94.jpg">
+<img src="./old/v94/web_v94.jpg">
 
 
 ## Update Jul 15, 2020 Version 89 - more new stuff
@@ -164,7 +164,7 @@ You just need the files from the /v89 folder. Edit the settings.h file for your 
 
 ## Update Jun 30, 2020 Version 86 - some new features
 
-<img src="./v86/v86.jpg">
+<img src="./old/v86/v86.jpg">
 
  # Software   
 - redo camera scheduler to reduce frame skips with slight delays between frames
@@ -206,15 +206,15 @@ You just need the files from the /v89 folder. Edit the settings.h file for your 
 
 Here is the "/" status page
 
-<img src="./v86/v86-status.jpg">
+<img src="./old/v86/v86-status.jpg">
 
 And the /stop page to restart with new parameters 
 
-<img src="./v86/v86-stop.jpg">
+<img src="./old/v86/v86-stop.jpg">
 
 And what it looks like on your phone Telegram App
 
-<img src="./v86/v86-Telegram.jpg">
+<img src="./old/v86/v86-Telegram.jpg">
 
 ## Update Feb 29, 2020 Sample Hardware for Microwave Camera
 
