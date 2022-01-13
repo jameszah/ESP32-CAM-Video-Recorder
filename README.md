@@ -37,7 +37,7 @@ Also the newer quicker version (with fewer features) over at https://github.com/
 
 You can download the videos to your computer or phone with just a click on the file from your browser -- no need for an ftp program anymore!
 
-<img src="./vA1/newfm.jpg">  
+<img src="./newfm.jpg">  
 
 ----
 
