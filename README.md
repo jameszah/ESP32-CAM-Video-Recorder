@@ -31,6 +31,10 @@ v98 for arduino-esp32 1.0.4
 The esp32-arduino 2.0.2 contains some nicer camera code that clears away little glitches that used to pop up.  
 It is very clean now!
 
+You can hardcode your ssid and password into settings.h, or put in a 1 character long ssid, and it will use WiFiManager to set your ssid and password.
+If you want Telegram bot to work, you still have to hardcode them into settings.h
+
+
 More commentary coming ... and refinements ... test it before you use it.
 
 Also the newer quicker version (with fewer features) over at https://github.com/jameszah/ESP32-CAM-Video-Recorder-junior   
