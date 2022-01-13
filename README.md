@@ -43,7 +43,11 @@ You can download the videos to your computer or phone with just a click on the f
 
 <img src="./newfm.jpg">  
 
-----
+----  
+
+old stuff below - might contain details not applicable to current version
+
+----  
 
 
 Note line 1413 -- this current version uses the WiFiManager for all WiFi setup.  Change this line if you want to use the previous version of hardcoded ssid and password.
