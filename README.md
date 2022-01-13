@@ -14,8 +14,33 @@ TimeLapseAvi
   
   jameszah/ESP32-CAM-Video-Recorder is licensed under the GNU General Public License v3.0
 
+vA1 for arduino-esp32 2.0.2  
 v99 for arduino-esp32 1.0.6   
 v98 for arduino-esp32 1.0.4   
+
+## Update Jan 12, 2022 - esp32-arduino 2.0.2 and replace ftp with http file transfer
+
+ Version A1 - Jan 1, 2022
+  - switch from ftp to http file tranfer
+     https://github.com/jameszah/ESPxWebFlMgr/tree/master/esp32_sd_file_manager
+  - changes for esp32-arduino 1.06 -> 2.02
+  - added link to telegram to download completed avi with one-click
+  - delete low-voltage handler (serves no purpose)
+  - get rid of touch (not much used i think)
+
+The esp32-arduino 2.0.2 contains some nicer camera code that clears away little glitches that used to pop up.  
+It is very clean now!
+
+More commentary coming ... and refinements ... test it before you use it.
+
+Also the newer quicker version (with fewer features) over at https://github.com/jameszah/ESP32-CAM-Video-Recorder-junior   
+
+You can download the videos to your computer or phone with just a click on the file from your browser -- no need for an ftp program anymore!
+
+<img src="./vA1/newfm.jpg">  
+
+----
+
 
 Note line 1413 -- this current version uses the WiFiManager for all WiFi setup.  Change this line if you want to use the previous version of hardcoded ssid and password.
 
