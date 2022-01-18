@@ -43,6 +43,8 @@ You can download the videos to your computer or phone with just a click on the f
 
 <img src="./newfm.jpg">  
 
+Jan 17, 2022 - small update to fix the file delete when disk full required by 2.0.2
+
 ----  
 
 old stuff below - might contain details not applicable to current version
