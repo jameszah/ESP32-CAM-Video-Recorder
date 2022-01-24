@@ -921,7 +921,7 @@ void delete_old_stuff() {
   Serial.printf("Used space: %lluMB\n", SD_MMC.usedBytes() / (1024 * 1024));
 
   float full = 1.0 * SD_MMC.usedBytes() / SD_MMC.totalBytes();;
-  if (full  <  0.9) {
+  if (full  <  0.8) {
     Serial.printf("Nothing deleted, %.1f%% disk full\n", 100.0 * full);
   } else {
     Serial.printf("Disk is %.1f%% full ... deleting oldest day\n", 100.0 * full);
@@ -1346,8 +1346,8 @@ bool init_wifi()
   } else {
 
     WiFi.disconnect(true, true);
-    WiFi.mode(WIFI_STA);
     WiFi.setHostname(devname);
+    WiFi.mode(WIFI_STA);
     //WiFi.printDiag(Serial);
     WiFi.begin(ssid, password);
 
