@@ -937,7 +937,7 @@ void delete_old_stuff() {
 
           char foldname[50];
           strcpy(foldname, file.name());
-          foldname[0] = 0x20;
+          //foldname[0] = 0x20;
           int i = atoi(foldname);
           if (i > 20200000 && i < oldest) {
             strcpy (oldestname, file.name());
@@ -956,10 +956,12 @@ void delete_old_stuff() {
 
 void deleteFolderOrFile(const char * val) {
   // Function provided by user @gemi254
-  Serial.printf("Deleting : %s\n", val);
-  File f = SD_MMC.open(val);
+  char val_w_slash[60];  //ver A1 for 2.0.2
+  sprintf(val_w_slash, "/%s", val);
+  Serial.printf("Deleting : %s\n", val_w_slash);
+  File f = SD_MMC.open(val_w_slash);
   if (!f) {
-    Serial.printf("Failed to open %s\n", val);
+    Serial.printf("Failed to open %s\n", val_w_slash);
     return;
   }
 
@@ -970,11 +972,14 @@ void deleteFolderOrFile(const char * val) {
         Serial.print("  DIR : ");
         Serial.println(file.name());
       } else {
+        char file_w_slash[100];
+        sprintf(file_w_slash, "%s/%s", val_w_slash,file.name());
         Serial.print("  FILE: ");
-        Serial.print(file.name());
+        Serial.print(file_w_slash);
         Serial.print("  SIZE: ");
         Serial.print(file.size());
-        if (SD_MMC.remove(file.name())) {
+
+        if (SD_MMC.remove(file_w_slash)) {
           Serial.println(" deleted.");
         } else {
           Serial.println(" FAILED.");
@@ -984,16 +989,16 @@ void deleteFolderOrFile(const char * val) {
     }
     f.close();
     //Remove the dir
-    if (SD_MMC.rmdir(val)) {
-      Serial.printf("Dir %s removed\n", val);
+    if (SD_MMC.rmdir(val_w_slash)) {
+      Serial.printf("Dir %s removed\n", val_w_slash);
     } else {
       Serial.println("Remove dir failed");
     }
 
   } else {
     //Remove the file
-    if (SD_MMC.remove(val)) {
-      Serial.printf("File %s deleted\n", val);
+    if (SD_MMC.remove(val_w_slash)) {
+      Serial.printf("File %s deleted\n", val_w_slash);
     } else {
       Serial.println("Delete failed");
     }
