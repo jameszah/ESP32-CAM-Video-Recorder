@@ -43,6 +43,18 @@ You can download the videos to your computer or phone with just a click on the f
 
 <img src="./newfm.jpg">  
 
+If you have he telegram bot turned on, it will send you the first frame of a new recording, and give you a link to the previous recording for you to download to your phone or computer with one click.
+
+<img src="./telegram1.jpg">
+
+<img src="./telegram2.jpg">
+
+<img src="./telegram3.jpg">
+
+
+
+
+
 Jan 17, 2022 - small update to fix the file delete when disk full required by 2.0.2
 
 ----  
