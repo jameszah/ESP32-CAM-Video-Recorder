@@ -43,7 +43,7 @@ You can download the videos to your computer or phone with just a click on the f
 
 <img src="./newfm.jpg">  
 
-If you have he telegram bot turned on, it will send you the first frame of a new recording, and give you a link to the previous recording for you to download to your phone or computer with one click.
+If you have the telegram bot turned on, it will send your telegram app the first frame of a new recording, and give you a link to the previous recording for you to download to your phone or computer with one click.
 
 <img src="./telegram1.jpg">
 
