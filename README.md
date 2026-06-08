@@ -423,3 +423,4 @@ Quick de-solder of the collector on the top of the J3Y transistor just above the
 <img src="./de-solder.png">
 
 <img src="./de-solder3.png">
+
